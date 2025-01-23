@@ -14,9 +14,9 @@ public class Film {
 		
 	}
 	
-	public Film(int filmNr, String filmSkaper, String tittel, int lanseringsÅr, String filmSelskap, Sjanger sjanger) {
+	public Film(int filmNr, String produsent, String tittel, int lanseringsÅr, String filmSelskap, Sjanger sjanger) {
 		this.filmNr = filmNr;
-		this.produsent = filmSkaper;
+		this.produsent = produsent;
 		this.tittel = tittel;
 		this.lanseringsÅr = lanseringsÅr;
 		this.filmSelskap = filmSelskap;
@@ -29,15 +29,15 @@ public class Film {
 	}
 
 	public void setFilmNr(int filmNr) {
-		this.filmNr = filmNr;
+		this.filmNr = filmNr; 
 	}
 
-	public String getFilmSkaper() {
+	public String getProdusent() {
 		return produsent;
 	}
 
-	public void setFilmSkaper(String filmSkaper) {
-		this.produsent = filmSkaper;
+	public void setProdusent(String produsent) {
+		this.produsent = produsent;
 	}
 
 	public String getTittel() {
@@ -62,6 +62,14 @@ public class Film {
 
 	public void setFilmSelskap(String filmSelskap) {
 		this.filmSelskap = filmSelskap;
+	}
+
+	public Sjanger getSjanger() {
+		return sjanger;
+	}
+
+	public void setSjanger(Sjanger sjanger) {
+		this.sjanger = sjanger;
 	}
 
 	@Override

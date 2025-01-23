@@ -1,5 +1,7 @@
 package no.hvl.data102.filmarkiv.impl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
 
 public class Filmarkiv implements FilmarkivADT {
@@ -66,20 +68,55 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public Film[] soekTittel(String delstreng) {
-		// TODO Auto-generated method stub
-		return null;
+		if (delstreng == null) {
+			return new Film[0];
+		}
+		
+		int funnet = 0;
+		Film[] filmerFunnet = new Film[filmer.length];
+		
+		for (int i = 0; i < antall; i++) {
+			if (filmer[i].getTittel().contains(delstreng)) {
+				filmerFunnet[funnet++] = filmer[i];
+			}
+		}
+		
+		return trimTab(filmerFunnet, funnet);
 	}
 
 	@Override
 	public Film[] soekProdusent(String delstreng) {
-		// TODO Auto-generated method stub
-		return null;
+		if (delstreng == null) {
+			return new Film[0];
+		}
+		
+		int funnet = 0;
+		Film[] filmerFunnet = new Film[filmer.length];
+		
+		for (int i = 0; i < antall; i++) {
+			if (filmer[i].getProdusent().contains(delstreng)) {
+				filmerFunnet[funnet++] = filmer[i];
+			}
+		}
+		
+		return trimTab(filmerFunnet, funnet);
 	}
 
 	@Override
 	public int antall(Sjanger sjanger) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (sjanger == null) {
+			return 0;
+		}
+		
+		int funnet = 0;
+		
+		for (int i = 0; i < antall; i++) {
+			if (filmer[i].getSjanger().equals(sjanger)) {
+				funnet++;
+			}
+		}
+		
+		return funnet;
 	}
 
 	@Override
