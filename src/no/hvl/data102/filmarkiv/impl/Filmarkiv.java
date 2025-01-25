@@ -1,7 +1,5 @@
 package no.hvl.data102.filmarkiv.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
 
 public class Filmarkiv implements FilmarkivADT {

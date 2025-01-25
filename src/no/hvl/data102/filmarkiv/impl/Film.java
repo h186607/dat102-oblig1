@@ -24,6 +24,12 @@ public class Film {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Film [filmNr=" + filmNr + ", produsent=" + produsent + ", tittel=" + tittel + ", lanseringsÅr="
+				+ lanseringsÅr + ", filmSelskap=" + filmSelskap + ", sjanger=" + sjanger + "]";
+	}
+
 	public int getFilmNr() {
 		return filmNr;
 	}
