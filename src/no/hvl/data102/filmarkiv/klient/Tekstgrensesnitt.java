@@ -13,22 +13,28 @@ public class Tekstgrensesnitt {
 	// Leser inn opplysninger om en film fra tastatur og returnere et Film-objekt
 	public Film lesFilm() {
 		System.out.println("Oppgi filmnr: ");	
-		int filmnr = inn.nextInt();  
+		int filmnr = inn.nextInt(); 
+		inn.nextLine();
 		
 		System.out.println("Oppgi produsent: ");
 		String produsent = inn.nextLine();
+		inn.nextLine();
 		
 		System.out.println("Oppgi filmtittel: ");
 		String tittel = inn.nextLine();
+		inn.nextLine();
 		
 		System.out.println("Hva er lanseringsår: ");
 		int lanseringsår = inn.nextInt();
+		inn.nextLine();
 		
 		System.out.println("Oppgi filmstudio: ");
 		String filmstudio = inn.nextLine();
+		inn.nextLine();
 		
 		System.out.println("Oppgi hvilken sjanger filmen er (action, drama, historie, sci-fi: ");
 		String s = inn.nextLine();
+		inn.nextLine();
 		
 		Sjanger sjanger = Sjanger.valueOf(s);
 		
@@ -51,7 +57,11 @@ public class Tekstgrensesnitt {
 	}
 	
 	public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng) {
-		System.out.println(arkiv.soekProdusent(delstreng).toString());
+		Film[] produsenter = arkiv.soekProdusent(delstreng);
+		 
+		for (int i = 0; i < produsenter.length; i++) {
+			skrivUtFilm(produsenter[i]);
+		}
 	}
 	
 	// Skriver ut en enkel statistikk som inneholder antall filmer totalt
@@ -66,22 +76,23 @@ public class Tekstgrensesnitt {
 	
 	public void skrivUtMenyAlternativer() {
 		System.out.println("Hva ønsker du å gjøre? ");
-		System.out.println("- Legge til film");
-		System.out.println("- Slette film");
-		System.out.println("- Søke etter film med tittel");
-		System.out.println("- Søke etter film med produsent");
-		System.out.println("- Se antall filmer i arkivet");
-		System.out.println("- Se antall filmer i arkivet, etter sjanger");
+		System.out.println("Trykk 1 for å legge til film");
+		System.out.println("Trykk 2 for å slette film");
+		System.out.println("Trykk 3 for å søke etter film med tittel");
+		System.out.println("Trykk 4 for å søke etter film med produsent");
+		System.out.println("Trykk 5 for å se antall filmer i arkivet");
 	}
 	
-	public String lesOensketOperasjon() {
-		String operasjon = inn.nextLine(); 
+	public int lesOensketOperasjon() {
+		int operasjon = inn.nextInt(); 
+		inn.nextLine();
 		return operasjon;
 	}
 	
 	public int lesFilmnr() {
 		System.out.println("Skriv ønsker filmnr: ");
 		int nr = inn.nextInt();
+		inn.nextLine();
 		return nr;
 		// Skriv ut "Skriv ønsket filmnr: "
 		// Les inn og returner
@@ -97,6 +108,10 @@ public class Tekstgrensesnitt {
 		System.out.println("Skriv ønsket film produsent: ");
 		String produsent = inn.nextLine();
 		return produsent;
+	}
+	
+	public void menyValgUtfort() {
+		 System.out.println("Menyvalg utført.");
 	}
 
 	//public String lesStringFraBruker(String beskjedTilBruker) {

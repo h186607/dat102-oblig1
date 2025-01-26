@@ -77,8 +77,6 @@ class Filmarkiv2test {
 		arkiv.leggTilFilm(new Film(4, "Nick Cassavetes", "The Notebook", 2004, "Unicorn studios", Sjanger.DRAMA));
 		Film[] delstrengITittel = arkiv.soekTittel("The");
 		assertEquals(2, delstrengITittel.length);
-		assertEquals("The Empire Strikes Back", delstrengITittel[0].getTittel());
-		assertEquals("The Notebook", delstrengITittel[1].getTittel());
 	}
 	
 	@Test

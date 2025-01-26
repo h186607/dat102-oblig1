@@ -40,22 +40,38 @@ public class Meny {
 		filmarkiv.leggTilFilm(new Film(10, "James Cameron", "The Terminator", 1984, "Orion Pictures", Sjanger.ACTION));
 		
 		
-		tekstgr.skrivUtMenyAlternativer();
 		
 		while(true) {
-			tekstgr.lesOensketOperasjon();
+			tekstgr.skrivUtMenyAlternativer();
 			
-			// finn ut kva input er, og kall på rett metode meny
+			int menyValg = tekstgr.lesOensketOperasjon();
+			
+			switch (menyValg) {
+				case 1: leggTilFilm();
+					break;
+				case 2: slettFilm();
+					break;
+				case 3: soekFilm();
+					break;
+				case 4: soekProdusent();
+					break;
+				case 5: antall();
+					break;	
+			}
+			
+			System.out.println();
 		}
 	}
 	
 	public void leggTilFilm() {
 		Film f = tekstgr.lesFilm();
 		filmarkiv.leggTilFilm(f);
+		tekstgr.menyValgUtfort();
 	}
 	
 	public void slettFilm() {
 		filmarkiv.slettFilm(tekstgr.lesFilmnr());
+		tekstgr.menyValgUtfort();
 	}
 	
 	public void soekFilm() {
@@ -64,11 +80,12 @@ public class Meny {
 	}
 	
 	public void soekProdusent() {
-		filmarkiv.soekProdusent(tekstgr.skrivUtFilmProdusent(filmarkiv, null));
+		String produsent = tekstgr.lesFilmProdusent();
+		tekstgr.skrivUtFilmProdusent(filmarkiv, produsent);
 	}
 	
 	public void antall() {
-		filmarkiv.antall(tekstgr.skrivUtStatistikk(filmarkiv));
+		tekstgr.skrivUtStatistikk(filmarkiv);
 		
 	}
 	
