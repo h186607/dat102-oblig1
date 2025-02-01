@@ -5,19 +5,6 @@ import no.hvl.data102.filmarkiv.impl.Film;
 import no.hvl.data102.filmarkiv.impl.Sjanger;
 
 public class Meny {
-	
-	/*
-	 * Ting vi skal kunne velge i menyen:
-	 * 
-	 * - Legg til film
-	 * - slett film
-	 * - søk filmer etter tittel
-	 * - søk filmer etter produsent
-	 * - finn film
-	 * - finn antall filmer etter sjanger
-	 * - finn totalt antall filmer
-	 */
-	
 	private Tekstgrensesnitt tekstgr;
 	private FilmarkivADT filmarkiv;
 	
@@ -26,7 +13,6 @@ public class Meny {
 		this.filmarkiv = filmarkiv;
 	}
 	
-	// legg inn en del forhåndsdefinerte filmer for å teste metodene
 	public void start() {
 		filmarkiv.leggTilFilm(new Film(1, "Frank Darabont", "The Shawshank Redemption", 1994, "Castle Rock Entertainment", Sjanger.DRAMA));
 		filmarkiv.leggTilFilm(new Film(2, "Francis Ford Coppola", "The Godfather", 1972, "Paramount Pictures", Sjanger.DRAMA));
@@ -38,8 +24,6 @@ public class Meny {
 		filmarkiv.leggTilFilm(new Film(8, "George Lucas", "Star Wars: Episode IV - A New Hope", 1977, "Lucasfilm", Sjanger.SCIFI));
 		filmarkiv.leggTilFilm(new Film(9, "Steven Spielberg", "Schindler's List", 1993, "Universal Pictures", Sjanger.HISTORY));
 		filmarkiv.leggTilFilm(new Film(10, "James Cameron", "The Terminator", 1984, "Orion Pictures", Sjanger.ACTION));
-		
-		
 		
 		while(true) {
 			tekstgr.skrivUtMenyAlternativer();
@@ -57,6 +41,8 @@ public class Meny {
 					break;
 				case 5: antall();
 					break;	
+				case 6: System.exit(0);
+					break;
 			}
 			
 			System.out.println();

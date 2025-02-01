@@ -81,6 +81,7 @@ public class Tekstgrensesnitt {
 		System.out.println("Trykk 3 for å søke etter film med tittel");
 		System.out.println("Trykk 4 for å søke etter film med produsent");
 		System.out.println("Trykk 5 for å se antall filmer i arkivet");
+		System.out.println("Trykk 6 for å avslutte");
 	}
 	
 	public int lesOensketOperasjon() {

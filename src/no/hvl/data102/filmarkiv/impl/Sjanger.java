@@ -9,6 +9,7 @@ public enum Sjanger {
 				return s;
 			}
 		}
+		
 		return null;
 	}
 }
