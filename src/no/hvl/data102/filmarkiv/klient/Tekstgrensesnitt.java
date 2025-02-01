@@ -18,11 +18,9 @@ public class Tekstgrensesnitt {
 		
 		System.out.println("Oppgi produsent: ");
 		String produsent = inn.nextLine();
-		inn.nextLine();
 		
 		System.out.println("Oppgi filmtittel: ");
 		String tittel = inn.nextLine();
-		inn.nextLine();
 		
 		System.out.println("Hva er lanseringsår: ");
 		int lanseringsår = inn.nextInt();
@@ -30,13 +28,11 @@ public class Tekstgrensesnitt {
 		
 		System.out.println("Oppgi filmstudio: ");
 		String filmstudio = inn.nextLine();
-		inn.nextLine();
 		
 		System.out.println("Oppgi hvilken sjanger filmen er (action, drama, historie, sci-fi: ");
 		String s = inn.nextLine();
-		inn.nextLine();
 		
-		Sjanger sjanger = Sjanger.valueOf(s);
+		Sjanger sjanger = Sjanger.valueOf(s.toUpperCase());
 		
 		Film film = new Film(filmnr, produsent, tittel, lanseringsår, filmstudio, sjanger);
 		return film;
